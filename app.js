@@ -35,6 +35,10 @@ document.querySelector(".close-popup").addEventListener("click", () => {
 });
 
 addTaskButton.addEventListener("click", () => {
+  if(window.innerWidth<768){
+    AddTaskSection.style.width = "100%";
+    document.getElementById("sidebar").classList.remove("left")
+  }
   console.log("add task click");
   AddTaskSection.style.right = "0";
   closePanel.style.display="block"
