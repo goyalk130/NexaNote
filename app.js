@@ -2,7 +2,7 @@ const inputTaskTitle = document.getElementById("input-task-title");
 const inputTaskDesc = document.getElementById("input-task-desc");
 const dueDate = document.getElementById("due-date");
 const category = document.getElementById("categories");
-const addTaskButton = document.getElementById("add-task-button");
+const addTaskButton = document.querySelector(".add-task-button");
 const listEle = document.getElementById("task-list");
 const signupButton = document.getElementById("signup");
 const loginButton = document.getElementById("login");
@@ -34,7 +34,18 @@ document.querySelector(".close-popup").addEventListener("click", () => {
   messagePop.style.display = "none";
 });
 
-addTaskButton.addEventListener("click", () => {
+document.querySelectorAll(".add-task-button")[0].addEventListener("click", () => {
+  AddTaskSection.style.width = "25%";
+  if(window.innerWidth<768){
+    AddTaskSection.style.width = "100%";
+    document.getElementById("sidebar").classList.remove("left")
+  }
+  console.log("add task click");
+  AddTaskSection.style.right = "0";
+  closePanel.style.display="block"
+});
+document.querySelectorAll(".add-task-button")[1].addEventListener("click", () => {
+  AddTaskSection.style.width = "25%";
   if(window.innerWidth<768){
     AddTaskSection.style.width = "100%";
     document.getElementById("sidebar").classList.remove("left")
