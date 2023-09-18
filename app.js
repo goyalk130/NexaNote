@@ -481,6 +481,9 @@ function addTask() {
   }
   savecategoryarray()
   removefromall()
+  filtertasks("all");
+  all.classList.add("out");
+  all.children[0].children[0].classList.add("color-blue");
   search();
 }
 
