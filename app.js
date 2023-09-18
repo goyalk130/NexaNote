@@ -8,6 +8,7 @@ const signupButton = document.getElementById("signup");
 const loginButton = document.getElementById("login");
 const signupLoginPage = document.getElementById("signup-login");
 const signupLoginButton = document.getElementById("signup-login-button");
+const duedateTrigger = document.querySelector(".dueDate")
 const popup = document.getElementById("popup");
 const popupData = document.getElementById("popup-data");
 const mainApp = document.getElementById("main-app");
@@ -28,7 +29,20 @@ const closePanel = document.querySelector(".close-panels");
 const closeLoginSignup = document.querySelector(".close-login");
 const editTaskPanel = document.getElementById("edit-task");
 
-
+let sortTaskbydate = document.getElementById("sort-task")
+sortTaskbydate.value = "none"
+duedateTrigger.onclick = ()=>{
+  console.log("triggering")
+    duedateTrigger.classList.toggle("color-change")
+    if(sortTaskbydate.value == "date"){
+      sortTaskbydate.value = "none"
+    }else{
+      console.log("date")
+      sortTaskbydate.value = "date"
+    }
+    console.log(sortTaskbydate.value)
+    search()
+}
 closeLoginSignup.onclick = ()=>{
   signupLoginPage.style.right = "-100%";
 }
@@ -500,6 +514,7 @@ document.addEventListener("keydown", (event) => {
   let x = document.getElementById("search-bar");
   document.getElementById("search-bar").addEventListener("focus", () => {
     x.value = "";
+    search()
   });
 });
 
@@ -571,6 +586,8 @@ function loadToUi(parsedData, type = "all") {
     document.getElementById("sidebar").classList.remove("left")
   }
   listEle.innerHTML = "";
+  let state = 0;
+
   //   let data = localStorage.getItem("tasks");
   //   parsedData = JSON.parse(data) || [];
 
@@ -850,15 +867,17 @@ function loadToUi(parsedData, type = "all") {
   
       function addOrNot(list, taskcon, task) {
         //   console.log(type);
-        let state = 0;
         if (type == "all") {
+          state++
           list.appendChild(taskcon);
         } else if (type == "incompleted") {
           if (task.status == false) {
+            state++
             list.appendChild(taskcon);
           }
         } else if (type == "completed") {
           if (task.status == true) {
+            state++
             list.appendChild(taskcon);
           }
         }
@@ -877,14 +896,19 @@ function loadToUi(parsedData, type = "all") {
         // }
   
       addOrNot(listEle, taskContainer, task);
-      if(listEle.innerHTML == ""){
-        console.log("no data")
-        listEle.innerHTML = `<img src="./img/no.png" class="no-data" />`
-      }
+      console.log(state)
+      
       // listEle.appendChild(taskContainer)
     });
+
+
   }
 
+
+  if(state==0){
+    console.log("no data")
+    listEle.innerHTML = `<img src="./img/no.png" class="no-data" />`
+  }
   
   // listEle.appendChild(workTaskList);
   // listEle.appendChild(personalTaskList);
