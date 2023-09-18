@@ -935,6 +935,7 @@ textarea {
 
 
 .menu {
+    display: none;
     position: relative;
     padding-right: 1rem;
 }
@@ -1090,7 +1091,21 @@ textarea {
     height: 100%;
     z-index: 40;
 }
-
+.delete-icon-button{
+    color: white;
+    display: none;
+}
+@media (min-width : 768px) {
+    .menu{
+        display: block;
+    }
+}
+@media (min-width:320px) and ( max-width : 768px) {
+    .delete-icon-button{
+        color: white;
+        display: block;
+    }
+}
 @media (max-width:1211px) and (min-width:768px) {
     .task-container {
         width: 31%;

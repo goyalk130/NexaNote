@@ -861,6 +861,11 @@ function loadToUi(parsedData, type = "all") {
       titleDropCon.appendChild(title);
       titleDropCon.appendChild(menu);
       
+      let deletebutton2 = document.createElement("div");
+      deletebutton2.classList.add("delete-icon-button")
+      deletebutton2.innerHTML = '<i class="fa-solid fa-trash delete-icon-button"></i>'
+      deletebutton2.onclick = ()=> deleteTask(task.id)
+      titleDropCon.appendChild(deletebutton2);
       taskContainer.appendChild(titleDropCon);
       taskContainer.appendChild(description);
       taskContainer.appendChild(categories);
