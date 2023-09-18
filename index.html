@@ -36,6 +36,7 @@
         <div id="close-login-signup"></div>
         <div id="signup-login">
           <!-- <p id="signup-login-switch" onclick="switchState()">LOGIN</p> -->
+          <i class="fa-solid fa-xmark close-login"></i>
           <div class="form">
             <input type="text" placeholder="USERNAME" id="username" />
             <input type="password" placeholder="PASSWORD" id="password" />
@@ -167,11 +168,11 @@
               </div>
               <div class="input-field-con">
                 <label class="input-heading" for="categories">Categories</label>
-              <select id="categories">
-                <option value="work">work</option>
-                <option value="personal">personal</option>
-                <option value="study">study</option>
-              </select>
+              <div id="categories">
+                <div class="category-item work ">Work</div>
+                <div class="category-item personal">Personal</div>
+                <div class="category-item study">Study</div>
+              </div>
               </div>
 
               <div class="add-task-button-con">
@@ -184,6 +185,34 @@
                 add task
               </button>
               </div>
+            </div>
+
+            <div id="edit-task">
+                <div class="edit-task-con">
+                  <div class="title-con">
+                    <div class="edit-title" contenteditable spellcheck="false">dcjbdk
+                    </div>
+                    <i class="fa-solid fa-xmark close-edit"></i>
+                  </div>
+                  <div class="date-con">
+                    <i class="fa-solid fa-clock-rotate-left timer"></i>
+                    <div class="edit-date">16 Apr</div>
+                  </div>
+                  <div class="desc-con">
+                    <div class="date-name-con">
+                      <i class="fa-solid fa-file-lines timer"></i> 
+                      <div>Description</div>
+                    </div>
+                    <div class="edit-desc "  contenteditable spellcheck="false"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eveniet deleniti possimus vel consectetur doloribus? Ipsam eligendi eaque dolores, error voluptates quibusdam earum eveniet numquam assumenda rem repellendus modi corporis voluptatum commodi nobis in explicabo unde. Suscipit praesentium, nam vero et eius rem! Sint animi illum quidem, inventore iusto vero.</div>
+                  </div>
+                  
+                  <div id="categories">
+                    <div class="category-item edit-work ">Work</div>
+                    <div class="category-item edit-personal">Personal</div>
+                    <div class="category-item edit-study">Study</div>
+                  </div>
+                  <button class="save">Save</button>
+                </div>
             </div>
 
             <div id="task-list"></div>
