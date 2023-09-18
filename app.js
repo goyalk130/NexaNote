@@ -47,7 +47,7 @@ closeLoginSignup.onclick = ()=>{
   signupLoginPage.style.right = "-100%";
 }
 
-let currentLoginUser = "goyalk130";
+let currentLoginUser = "";
 let switchStateUser = true;
 savecategoryarray()
 

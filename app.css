@@ -288,7 +288,7 @@ button {
     background: #00000030;
     backdrop-filter: blur(2px);
     display: flex;
-    display: none;
+    /* display: none; */
     top: 0;
     right: 0;
     transition: none !important;
@@ -555,7 +555,7 @@ button {
     font-family: 'Comfortaa', cursive !important;
     background: var(--color-3-hex);
 
-    /* display: none; */
+    display: none;
     width: 100%;
 
 }
